@@ -43,6 +43,7 @@ async def download_video(update: Update, context):
 
     # Настройки для yt-dlp
     ydl_opts = {
+         'cookiefile': 'cookies.txt',  # Указываем файл с куками
         'format': 'best',  # Скачиваем лучшее качество
         'outtmpl': 'downloaded_video.mp4',  # Имя файла
         'noplaylist': True,  # Только одно видео
