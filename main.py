@@ -33,10 +33,10 @@ async def download_video(update: Update, context):
     # Определяем платформу
     if 'tiktok.com' in url:
         platform = 'TikTok'
-    elif 'youtube.com' in url or 'youtu.be' in url:
-        platform = 'YouTube'
+    if 'youtube.com' in url or 'youtu.be' in url:
+            cookies_file = 'cookies_youtube.txt'
     elif 'instagram.com' in url:
-        platform = 'Instagram'
+            cookies_file = 'cookies_instagram.txt'
     else:
         platform = 'другой платформы'
 
@@ -44,7 +44,6 @@ async def download_video(update: Update, context):
 
     # Настройки для yt-dlp
     ydl_opts = {
-         'cookiefile': 'cookies.txt',  # Указываем файл с куками
         'format': 'best',  # Скачиваем лучшее качество
         'outtmpl': 'downloaded_video.mp4',  # Имя файла
         'noplaylist': True,  # Только одно видео
@@ -55,6 +54,9 @@ async def download_video(update: Update, context):
             'Referer': 'https://www.tiktok.com/',
         },
     }
+    # Если есть cookies, добавляем их в настройки
+    if cookies_file:
+        ydl_opts['cookiefile'] = cookies_file
 
     try:
         # Скачиваем видео
