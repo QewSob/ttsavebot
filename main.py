@@ -5,7 +5,8 @@ from yt_dlp import YoutubeDL
 from pydub import AudioSegment  # Для конвертации в MP3
 
 # Укажи полный путь к ffmpeg
-AudioSegment.converter = "C:/ffmpeg/bin/ffmpeg.exe"  # Для Windows
+AudioSegment.converter = "ffmpeg"
+  # Для Windows
 # Или
 # AudioSegment.converter = "/usr/bin/ffmpeg"  # Для Linux/macOS
 
