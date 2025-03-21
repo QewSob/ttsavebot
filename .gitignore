@@ -4,4 +4,11 @@ __pycache__/
 *.pyo
 *.pyd
 *.db
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+141867d7a918042582aa25fe58cf86a8ef751c7d
 *.sqlite3
