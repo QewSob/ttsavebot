@@ -1,0 +1,2 @@
+- name: Create cookies file
+  run: echo "${{ secrets.COOKIES_FILE }}" > cookies.txt

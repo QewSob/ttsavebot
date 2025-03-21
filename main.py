@@ -10,7 +10,7 @@ AudioSegment.converter = "C:/ffmpeg/bin/ffmpeg.exe"  # Для Windows
 # AudioSegment.converter = "/usr/bin/ffmpeg"  # Для Linux/macOS
 
 # Токен бота
-TOKEN = '7671217981:AAGbPcgRKB67rqwUg_aktcPmaS_lTVs1JIo' # Токен берется из переменных окружения
+TOKEN = '7671217981:AAGWQLgRH9mRN8OFIAYkajh5MImuxEUeSx4' # Токен берется из переменных окружения
 
 # Функция для обработки команды /start
 async def start(update: Update, context):
