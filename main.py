@@ -5,8 +5,7 @@ from yt_dlp import YoutubeDL
 from pydub import AudioSegment  # Для конвертации в MP3
 
 # Укажи полный путь к ffmpeg
-AudioSegment.converter = "ffmpeg"
-  # Для Windows
+AudioSegment.converter = "C:/ffmpeg/bin/ffmpeg.exe"  # Для Windows
 # Или
 # AudioSegment.converter = "/usr/bin/ffmpeg"  # Для Linux/macOS
 
@@ -34,9 +33,9 @@ async def download_video(update: Update, context):
     if 'tiktok.com' in url:
         platform = 'TikTok'
     elif 'youtube.com' in url or 'youtu.be' in url:
-        cookies_file = 'cookies.txt'
+        platform = 'YouTube'
     elif 'instagram.com' in url:
-        cookies_file = 'cookies1.txt'
+        platform = 'Instagram'
     else:
         platform = 'другой платформы'
 
@@ -45,7 +44,6 @@ async def download_video(update: Update, context):
     # Настройки для yt-dlp
     ydl_opts = {
         'cookiefile': 'cookies.txt',  # Указываем файл с куками
-        'cookiefile': 'cookies1.txt',
         'format': 'best',  # Скачиваем лучшее качество
         'outtmpl': 'downloaded_video.mp4',  # Имя файла
         'noplaylist': True,  # Только одно видео
